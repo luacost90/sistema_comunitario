@@ -1,0 +1,13 @@
+CREATE TABLE roles( 
+    id_rol INT AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(15) NOT NULL
+)
+
+CREATE TABLE users(
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(15) NOT NULL,
+    password VARCHAR(55) NOT NULL,
+    fk_rol INT,
+    FOREIGN KEY (fk_rol) REFERENCES roles(id_rol) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
