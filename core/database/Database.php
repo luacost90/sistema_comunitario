@@ -1,7 +1,7 @@
 <?php
 class Database{
     private string $host = 'localhost';
-    private string $db = 'gestion_escuela';
+    private string $db = 'sistema_comunitario';
     private string $user = 'root';
     private string $pass = '123';
 

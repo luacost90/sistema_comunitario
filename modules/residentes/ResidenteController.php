@@ -4,7 +4,7 @@
             include 'views/residentes/lista.php';
         }
 
-          public function viewRegistrar(){
+        public function viewRegistrar(){
             include 'views/residentes/registrar.php';
         }
     }
