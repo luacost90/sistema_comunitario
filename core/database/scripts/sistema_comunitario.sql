@@ -35,6 +35,7 @@ CREATE TABLE Grupo_Familiares (
 -- Tabla Residentes
 CREATE TABLE Residentes (
     id_residente INT AUTO_INCREMENT PRIMARY KEY,
+    cedula_residente VARCHAR(15) UNIQUE NULL,
     nombre_residente VARCHAR(50) NOT NULL,
     apellido_residente VARCHAR(50) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
@@ -42,10 +43,8 @@ CREATE TABLE Residentes (
     direccion VARCHAR(255) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
     embarazo BOOLEAN NOT NULL,
-    fk_grupo_familiar INT NULL,
     fk_genero INT NOT NULL,
     fk_edad_categoria INT NOT NULL,
-    FOREIGN KEY (fk_grupo_familiar) REFERENCES Grupo_Familiares(id_grupo_familiar),
     FOREIGN KEY (fk_genero) REFERENCES Generos(id_genero),
     FOREIGN KEY (fk_edad_categoria) REFERENCES Edad_Categorias(id_edad_categoria)
 );

@@ -17,7 +17,6 @@ export function singInLogin(){
         if(response.success){
             location.href = './dashboard';
         }else{
-            console.log("No entra")
             showMessage(response.error, 'danger');
         }
     });

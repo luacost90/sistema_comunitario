@@ -1,6 +1,6 @@
 <?php
 // En AuthController.php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/sistema_aped/core/database/Database.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sistema_comunitario/core/database/Database.php');
 require_once 'AuthRepository.php';
 require_once 'AuthService.php';
 
