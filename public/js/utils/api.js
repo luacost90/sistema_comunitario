@@ -10,6 +10,6 @@ export async function post(url, data){
         body: JSON.stringify(data)
     });
 
-    return await response.text();
-    
+    return await response.json();
+s    
 }

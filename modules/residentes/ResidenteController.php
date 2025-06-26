@@ -16,15 +16,16 @@
         public function createResidente(array $data){
 
             $db = (new Database())->getConnection();
+
+            // Inyectamos la implementación concreta del repositorio
+            $repository = new ResidenteRepository($db);
+            $residenteService = new ResidenteService($repository);
             
             $fecha = DateTime::createFromFormat('Y-m-d', $data['fecha_nacimiento']);
         
             $data['edad'] = (int)date('Y') - (int)$fecha->format('Y');
 
             $data['fk_edad_categoria'] = $this->determinarCategoriaEdad($data['edad']);
-            // Inyectamos la implementación concreta del repositorio
-            $repository = new ResidenteRepository($db);
-            $residenteService = new ResidenteService($repository);
 
             $res = $residenteService->saveResidente($data);
 
@@ -33,6 +34,19 @@
             }else{
                 echo json_encode(['success' => false, 'error' => 'No se ha podido registrar el usuario']);
             }
+        }
+
+        public function listResidente(){
+            $db = (new Database())->getConnection();
+            $repository = new ResidenteRepository($db);
+            $residenteService = new ResidenteService($repository);
+
+            $residentes = $residenteService->listResidente();
+
+            if($residentes) 
+                echo json_encode(['success' => true, 'data' => $residentes]);
+            else
+                echo json_encode(['success' => false, 'error' => 'No se ha podido registrar el usuario']);
         }
 
         public function determinarCategoriaEdad(int $edad): int{

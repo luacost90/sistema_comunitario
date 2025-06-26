@@ -400,5 +400,115 @@
     }
 }
 
+/* Tabla de Residentes - Estilo Moderno */
+.residentes-lista__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.10);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 2rem 0;
+    font-size: 1rem;
+    color: #22223b;
+    table-layout: auto;
+}
+
+.residentes-lista__thead {
+    background: linear-gradient(90deg, #c0392b 0%, #e74c3c 100%);
+}
+
+.residentes-lista__th {
+    padding: 1rem 0.8rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #e74c3c33;
+    font-size: 1.05rem;
+}
+
+.residentes-lista__row {
+    transition: background 0.2s;
+}
+
+.residentes-lista__tbody .residentes-lista__row {
+    background: #fff;
+    border-bottom: 1.5px solid #f2dede;
+}
+
+.residentes-lista__tbody .residentes-lista__row:last-child {
+    border-bottom: none;
+}
+
+.residentes-lista__tbody .residentes-lista__row:hover {
+    background: #fbeeea;
+    transition: background 0.2s;
+}
+
+.residentes-lista__tbody td {
+    padding: 0.85rem 0.8rem;
+    font-size: 1rem;
+    color: #22223b;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8f8fa;
+    transition: background 0.2s;
+}
+
+.residentes-lista__tbody td:last-child {
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .residentes-lista__table {
+        font-size: 0.93rem;
+        border-radius: 10px;
+    }
+    .residentes-lista__th,
+    .residentes-lista__tbody td {
+        padding: 0.6rem 0.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .residentes-lista__table,
+    .residentes-lista__thead,
+    .residentes-lista__tbody,
+    .residentes-lista__row,
+    .residentes-lista__th,
+    .residentes-lista__tbody td {
+        display: block;
+        width: 100%;
+    }
+    .residentes-lista__thead {
+        display: none;
+    }
+    .residentes-lista__tbody .residentes-lista__row {
+        margin-bottom: 1.2rem;
+        box-shadow: 0 2px 8px rgba(192,57,43,0.08);
+        border-radius: 8px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 0.7rem 0.5rem;
+    }
+    .residentes-lista__tbody td {
+        padding: 0.5rem 0.3rem;
+        border: none;
+        position: relative;
+    }
+    .residentes-lista__tbody td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #c0392b;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 0.2rem;
+        font-size: 0.93rem;
+        letter-spacing: 0.5px;
+    }
+}
 
 

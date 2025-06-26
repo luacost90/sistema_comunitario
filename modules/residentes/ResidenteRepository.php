@@ -14,7 +14,6 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
 
         $residente = new Residente($data);
         
-
         $sql = "INSERT INTO residentes (
             cedula_residente,
             nombre_residente,
@@ -56,6 +55,13 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
         } else {
             return false;
         }
+    }
+
+    public function indexResidente(){
+        $sql = "SELECT * FROM residentes";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

@@ -12,5 +12,9 @@
             return (bool) $this->repository->createResidente($data);
         }
 
+        public function listResidente(){
+            return $this->repository->indexResidente();
+        }
+
     }
 ?>

@@ -1,5 +1,6 @@
 import { singInLogin } from "./auth/login.js";
 import { singOutLogin } from "./auth/logOut.js";
+import { listar } from "./residentes/listar.js";
 import { registrarResidente} from "./residentes/registrar.js";
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     if(document.getElementById("registrar__form")){
         registrarResidente();
+    }
+
+    if(document.getElementById("residentesTable")){
+        listar();
     }
 });
 

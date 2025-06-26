@@ -18,7 +18,7 @@
     <form class="registrar__form" id="registrar__form">
         <div class="registrar__form-group">
             <label class="registrar__label" for="cedula_residente">Cédula</label>
-            <input class="registrar__input" type="text" id="cedula_residente" name="cedula_residente" required>
+            <input class="registrar__input" type="text" id="cedula_residente" name="cedula_residente" placeholder="Ejemplo: V-12345678 o E-12345678">
         </div>
         <div class="registrar__form-group">
             <label class="registrar__label" for="nombre_residente">Nombre</label>
@@ -38,7 +38,7 @@
         </div>
         <div class="registrar__form-group">
             <label class="registrar__label" for="telefono">Teléfono</label>
-            <input class="registrar__input" type="tel" id="telefono" name="telefono" required>
+            <input class="registrar__input" type="tel" id="telefono" placeholder="Ejemplo: 0412-1234567 o 0212-1234567" name="telefono" required>
         </div>
         <div class="registrar__form-group">
             <label class="registrar__label" for="embarazo">¿Embarazo?</label>
