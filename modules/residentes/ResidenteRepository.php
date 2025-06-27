@@ -63,6 +63,36 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function updateResidente(int $id, array $data) {
+        $sql = "UPDATE residentes SET
+            cedula_residente = :cedula_residente,
+            nombre_residente = :nombre_residente,
+            apellido_residente = :apellido_residente,
+            fecha_nacimiento = :fecha_nacimiento,
+            edad = :edad,
+            direccion = :direccion,
+            telefono = :telefono,
+            embarazo = :embarazo,
+            fk_genero = :fk_genero,
+            fk_edad_categoria = :fk_edad_categoria
+            WHERE id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':cedula_residente', $data['cedula_residente']);
+        $stmt->bindValue(':nombre_residente', $data['nombre_residente']);
+        $stmt->bindValue(':apellido_residente', $data['apellido_residente']);
+        $stmt->bindValue(':fecha_nacimiento', $data['fecha_nacimiento']);
+        $stmt->bindValue(':edad', $data['edad'], PDO::PARAM_INT);
+        $stmt->bindValue(':direccion', $data['direccion']);
+        $stmt->bindValue(':telefono', $data['telefono']);
+        $stmt->bindValue(':embarazo', $data['embarazo'], PDO::PARAM_BOOL);
+        $stmt->bindValue(':fk_genero', $data['fk_genero'], PDO::PARAM_INT);
+        $stmt->bindValue(':fk_edad_categoria', $data['fk_edad_categoria'], PDO::PARAM_INT);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }
 }
 
 ?>

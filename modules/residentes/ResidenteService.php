@@ -16,5 +16,9 @@
             return $this->repository->indexResidente();
         }
 
+        public function editResidente(int $id, array $data){
+            return $this->repository->updateResidente($id, $data);
+        }
+
     }
 ?>

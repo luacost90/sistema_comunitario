@@ -16,9 +16,8 @@ export async function listar() {
                 <td>${residente.telefono}</td>
                 <td>${residente.direccion}</td>
                 <td>
-                    <!-- Aquí puedes agregar botones de acción si lo deseas -->
-                    <button class="btn btn-primary btn-sm">Editar</button>
-                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                    <button class="btn btn-edit btn-primary btn-sm" data-id="${residente.id_residente}">Editar</button>
+                    <button class="btn btn-danger btn-sm" data-id="${residente.id_residente}">Eliminar</button>
                 </td>
             `;
             tbody.appendChild(tr);

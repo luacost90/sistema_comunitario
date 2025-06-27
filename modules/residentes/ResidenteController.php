@@ -49,6 +49,21 @@
                 echo json_encode(['success' => false, 'error' => 'No se ha podido registrar el usuario']);
         }
 
+        public function updateResidente(int $id, array $data){
+            $db = (new Database())->getConnection();
+            $repository = new ResidenteRepository($db);
+            $residenteService = new ResidenteService($repository);
+
+            $update = $residenteService->editResidente($id, $data);
+
+             if($ubdate){
+                echo json_encode(['success'=> true, 'message'=>'Se ha actualizado exitosamente']);
+            }else{
+                echo json_encode(['success' => false, 'error' => 'No se ha podido actualizar el usuario']);
+            }
+
+        }
+
         public function determinarCategoriaEdad(int $edad): int{
             
             if($edad > 0 && $edad <=3){
