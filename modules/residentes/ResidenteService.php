@@ -20,5 +20,9 @@
             return $this->repository->updateResidente($id, $data);
         }
 
+        public function getResidenteById(int $id){
+            return $this->repository->getResidenteById($id);
+        }
+
     }
 ?>
