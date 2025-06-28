@@ -10,6 +10,5 @@ export async function post(url, data){
         body: JSON.stringify(data)
     });
 
-    return await response.json();
-s    
+    return await response.json();    
 }

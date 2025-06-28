@@ -1,4 +1,4 @@
-
+import { post } from "../utils/api.js";
 
 export function editar(){
     document.addEventListener("click", async e =>{
@@ -6,10 +6,16 @@ export function editar(){
             let id = e.target.dataset.id;
             
             try {
-                const residentes = await post('ore/routes/api/updateResidente.php');
+                const residentes = await post('core/routes/api/getResidenteById.php', id);
+                console.log(residentes);
+                sessionStorage.setItem('datosResidente', JSON.stringify(residentes));
+                window.location.href = '/sistema_comunitario/editar';
             } catch (error) {
-                
+                console.error("Error al obtener los datos del residente:", error);
+                alert("Ocurrió un error al intentar editar el residente. Por favor, inténtalo de nuevo.");
             }
+
+
         }
     });
     // document.querySelectorAll(".btn").forEach( btn =>{

@@ -13,6 +13,10 @@
             include 'views/residentes/registrar.php';
         }
 
+        public function viewEditar(){
+            include 'views/residentes/edit.php';
+        }
+
         public function createResidente(array $data){
 
             $db = (new Database())->getConnection();
@@ -47,6 +51,20 @@
                 echo json_encode(['success' => true, 'data' => $residentes]);
             else
                 echo json_encode(['success' => false, 'error' => 'No se ha podido registrar el usuario']);
+        }
+
+        public function getResidenteById(int $id){
+            $db = (new Database())->getConnection();
+            $repository = new ResidenteRepository($db);
+            $residenteService = new ResidenteService($repository);
+
+            $residente = $residenteService->getResidenteById($id);
+
+            if($residente) 
+                echo json_encode(['success' => true, 'data' => $residente]);
+            else
+                echo json_encode(['success' => false, 'error' => 'No se pudo encontrar al residente']);
+
         }
 
         public function updateResidente(int $id, array $data){

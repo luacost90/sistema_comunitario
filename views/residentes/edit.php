@@ -55,7 +55,7 @@
             </select>
         </div>
         <div class="registrar__form-group">
-            <button class="registrar__button" type="submit">Registrar</button>
+            <button class="registrar__button" type="submit">Editar</button>
         </div>
     </form>
 </div>
