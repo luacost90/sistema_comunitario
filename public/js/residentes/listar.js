@@ -17,7 +17,7 @@ export async function listar() {
                 <td>${residente.direccion}</td>
                 <td>
                     <button class="btn btn-edit btn-primary btn-sm" data-id="${residente.id_residente}">Editar</button>
-                    <button class="btn btn-danger btn-sm" data-id="${residente.id_residente}">Eliminar</button>
+                    <button class="btn btn-eliminar btn-danger btn-sm" data-id="${residente.id_residente}">Eliminar</button>
                 </td>
             `;
             tbody.appendChild(tr);

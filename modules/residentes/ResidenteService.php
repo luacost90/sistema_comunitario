@@ -16,8 +16,12 @@
             return $this->repository->indexResidente();
         }
 
-        public function editResidente(int $id, array $data){
-            return $this->repository->updateResidente($id, $data);
+        public function editResidente(array $data){
+            return $this->repository->updateResidente($data);
+        }
+
+        public function deleteResidente(int $id){
+            return $this->repository->deleteResidente($id);
         }
 
         public function getResidenteById(int $id){

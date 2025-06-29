@@ -67,14 +67,35 @@
 
         }
 
-        public function updateResidente(int $id, array $data){
+        public function deleteResidente(int $id){
             $db = (new Database())->getConnection();
             $repository = new ResidenteRepository($db);
             $residenteService = new ResidenteService($repository);
 
-            $update = $residenteService->editResidente($id, $data);
+            $residente = $residenteService->deleteResidente($id);
 
-             if($ubdate){
+            if($residente) 
+                echo json_encode(['success' => true]);
+            else
+                echo json_encode(['success' => false, 'error' => 'No se pudo borrar el regostro del habitante']);
+
+        }
+
+        public function updateResidente(array $data){
+            $db = (new Database())->getConnection();
+            $repository = new ResidenteRepository($db);
+            $residenteService = new ResidenteService($repository);
+
+            $fecha = DateTime::createFromFormat('Y-m-d', $data['fecha_nacimiento']);
+        
+            $data['edad'] = (int)date('Y') - (int)$fecha->format('Y');
+
+            $data['fk_edad_categoria'] = $this->determinarCategoriaEdad($data['edad']);
+
+
+            $update = $residenteService->editResidente($data);
+
+             if($update){
                 echo json_encode(['success'=> true, 'message'=>'Se ha actualizado exitosamente']);
             }else{
                 echo json_encode(['success' => false, 'error' => 'No se ha podido actualizar el usuario']);

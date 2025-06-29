@@ -72,7 +72,14 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function updateResidente(int $id, array $data) {
+    public function deleteResidente(int $id){
+        $sql = "DELETE FROM residentes WHERE id_residente = :id_residente";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':id_residente', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public function updateResidente(array $data) {
         $sql = "UPDATE residentes SET
             cedula_residente = :cedula_residente,
             nombre_residente = :nombre_residente,
@@ -84,7 +91,7 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
             embarazo = :embarazo,
             fk_genero = :fk_genero,
             fk_edad_categoria = :fk_edad_categoria
-            WHERE id = :id";
+            WHERE id_residente = :id_residente";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(':cedula_residente', $data['cedula_residente']);
@@ -97,7 +104,7 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
         $stmt->bindValue(':embarazo', $data['embarazo'], PDO::PARAM_BOOL);
         $stmt->bindValue(':fk_genero', $data['fk_genero'], PDO::PARAM_INT);
         $stmt->bindValue(':fk_edad_categoria', $data['fk_edad_categoria'], PDO::PARAM_INT);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':id_residente', $data['id_residente'], PDO::PARAM_INT);
 
         return $stmt->execute();
     }
