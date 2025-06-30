@@ -58,7 +58,10 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
     }
 
     public function indexResidente(){
-        $sql = "SELECT * FROM residentes";
+        $sql = "SELECT r.*, g.nombre_genero, e.edad_categoria
+            FROM residentes r
+            LEFT JOIN generos g ON r.fk_genero = g.id_genero
+            LEFT JOIN edad_categorias e ON r.fk_edad_categoria = e.id_edad_categoria";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

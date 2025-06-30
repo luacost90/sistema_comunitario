@@ -10,7 +10,7 @@ export function registrarResidente(){
         const telefonoRegex = /^0(2(12|14|16|24|26)|4(12|14|16|24|26))-\d{7}$/; // Ejemplo: 0412-1234567 o 0212-1234567
 
         // Validar cédula
-        const cedula = form.cedula_residente.value.trim();
+        const cedula = form.cedula_residente.value.trim().toUpperCase();
         if (cedula !== "" && !cedulaRegex.test(cedula)) {
             alert('Cédula inválida. Ejemplo: V-12345678 o E-12345678');
             return;

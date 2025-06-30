@@ -5,5 +5,4 @@
     $controller = new AuthController();
 
     $controller->login($data['username'], $data['password']);
-
 ?>

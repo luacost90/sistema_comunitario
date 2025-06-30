@@ -28,7 +28,7 @@ export function actualizar(){
             e.preventDefault();
              const dataForm = {
                 id_residente: residente.id_residente,
-                cedula_residente:  form.cedula_residente.value,
+                cedula_residente:  form.cedula_residente.value.toUpperCase(),
                 nombre_residente: form.nombre_residente.value,
                 apellido_residente: form.apellido_residente.value,
                 fecha_nacimiento: form.fecha_nacimiento.value,

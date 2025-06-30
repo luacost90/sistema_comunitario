@@ -27,6 +27,7 @@ class AuthController{
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['rol'] = $user['role'];
+            
             echo json_encode(['success'=> true]);
         }else{
             echo json_encode(['success' => false, 'error' => 'Usuario o contraseña no válidas']);
