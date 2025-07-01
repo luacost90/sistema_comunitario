@@ -14,10 +14,10 @@ export function renderList(residentes){
                 <td>${residente.telefono}</td>
                 <td>${residente.direccion}</td>
                 <td>
+                    <button class="btn btn-info btn-secondary btn-sm" data-id="${residente.id_residente}">Ver detalles</button>
                     <button class="btn btn-edit btn-primary btn-sm" data-id="${residente.id_residente}">Editar</button>
                     <button class="btn btn-eliminar btn-danger btn-sm" data-id="${residente.id_residente}">Eliminar</button>
                 </td>
-            `;
-            tbody.appendChild(tr);
+            `;    tbody.appendChild(tr);
         });
 }

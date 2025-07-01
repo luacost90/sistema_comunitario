@@ -558,6 +558,18 @@
     transform: translateY(-2px) scale(1.04);
 }
 
+.btn-info {
+    background: linear-gradient(90deg, #17a2b8 0%, #138496 100%);
+    color: #fff;
+}
+
+.btn-info:hover,
+.btn-info:focus {
+    background: linear-gradient(90deg, #138496 0%, #17a2b8 100%);
+    color: #22223b;
+    transform: translateY(-2px) scale(1.04);
+}
+
 .residentes-lista__filters {
     width: 100%;
     background: #fff;
