@@ -657,3 +657,119 @@
     }
 }
 
+/* Modal Estilos Modernos */
+.modal {
+    display: none; /* Oculto por defecto, controlado por JS */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(34, 34, 59, 0.25);
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    margin: auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.18);
+    padding: 2.5rem 2rem 1.5rem 2rem;
+    max-width: 420px;
+    width: 95%;
+    position: relative;
+    animation: modalFadeIn 0.25s;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+@keyframes modalFadeIn {
+    from { transform: translateY(40px) scale(0.97); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.3rem;
+    font-size: 2rem;
+    color: #c0392b;
+    font-weight: 700;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 10;
+    transition: color 0.2s, transform 0.1s;
+    line-height: 1;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #e74c3c;
+    transform: scale(1.15);
+}
+
+#modalTitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #c0392b;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#modalBody p {
+    margin: 0.5rem 0;
+    font-size: 1.07rem;
+    color: #22223b;
+}
+
+#modalBody strong {
+    color: #c0392b;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.2rem;
+    gap: 0.7rem;
+}
+
+.btn.btn-secondary {
+    background: #f8f8fa;
+    color: #c0392b;
+    border: 1.5px solid #e74c3c33;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #c0392b;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        max-width: 98vw;
+        border-radius: 10px;
+    }
+    #modalTitle {
+        font-size: 1.1rem;
+    }
+}

@@ -5,6 +5,7 @@ import { editar } from "./residentes/editar.js";
 import { eliminar } from "./residentes/eliminar.js";
 import { filtrar } from "./residentes/filtrar.js";
 import { listar } from "./residentes/listar.js";
+import { modal } from "./residentes/modal.js";
 import { registrarResidente} from "./residentes/registrar.js";
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         listar();
         editar();
         eliminar();
+        modal();
     }
 
     if(document.getElementById("editar__form")){

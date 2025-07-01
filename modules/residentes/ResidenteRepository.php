@@ -68,7 +68,11 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
     }
 
     public function getResidenteById(int $id){
-        $sql = "SELECT * FROM residentes WHERE id_residente = :id_residente";
+        $sql = "SELECT r.*, g.nombre_genero, e.edad_categoria
+            FROM residentes r
+            LEFT JOIN generos g ON r.fk_genero = g.id_genero
+            LEFT JOIN edad_categorias e ON r.fk_edad_categoria = e.id_edad_categoria
+            WHERE r.id_residente = :id_residente";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(':id_residente', $id, PDO::PARAM_INT);
         $stmt->execute();

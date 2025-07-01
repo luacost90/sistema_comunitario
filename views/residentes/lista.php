@@ -53,6 +53,27 @@
             <button type="submit" class="btn btn-primary">Filtrar</button>
         </form>
     </div>
+    <!-- Modal Estructura HTML -->
+    <div id="residenteModal" class="modal" style="">
+        <div class="modal-content">
+            <span class="close-modal" id="closeResidenteModal">&times;</span>
+            <h3 id="modalTitle">Detalles del Residente</h3>
+            <div id="modalBody">
+                <!-- Aquí se mostrará la información del residente -->
+                <p><strong>Cédula:</strong> <span id="modalCedula"></span></p>
+                <p><strong>Nombre:</strong> <span id="modalNombre"></span></p>
+                <p><strong>Apellido:</strong> <span id="modalApellido"></span></p>
+                <p><strong>Edad:</strong> <span id="modalEdad"></span></p>
+                <p><strong>Sexo:</strong> <span id="modalSexo"></span></p>
+                <p><strong>Teléfono:</strong> <span id="modalTelefono"></span></p>
+                <p><strong>Dirección:</strong> <span id="modalDireccion"></span></p>
+                <!-- Puedes agregar más campos según sea necesario -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modalCloseBtn" class="btn btn-secondary">Cerrar</button>
+            </div>
+        </div>
+    </div>
     <table id="residentesTable" class="table table-striped residentes-lista__table">
         <thead class="residentes-lista__thead">
             <tr class="residentes-lista__row">
