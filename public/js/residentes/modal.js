@@ -20,6 +20,7 @@ export function modal(){
             document.getElementById("modalApellido").textContent = data.apellido_residente || "";
             document.getElementById("modalEdad").textContent = data.edad || "";
             document.getElementById("modalSexo").textContent = data.nombre_genero || "";
+            document.getElementById("modalEmbarazo").textContent = data.embarazo == 1 ? "SI" : "NO";
             document.getElementById("modalTelefono").textContent = data.telefono || "";
             document.getElementById("modalDireccion").textContent = data.direccion || "";
 

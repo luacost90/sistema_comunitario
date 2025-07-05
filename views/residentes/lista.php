@@ -65,6 +65,7 @@
                 <p><strong>Apellido:</strong> <span id="modalApellido"></span></p>
                 <p><strong>Edad:</strong> <span id="modalEdad"></span></p>
                 <p><strong>Sexo:</strong> <span id="modalSexo"></span></p>
+                <p><strong>Embarazo:</strong> <span id="modalEmbarazo"></span></p>
                 <p><strong>Teléfono:</strong> <span id="modalTelefono"></span></p>
                 <p><strong>Dirección:</strong> <span id="modalDireccion"></span></p>
                 <!-- Puedes agregar más campos según sea necesario -->

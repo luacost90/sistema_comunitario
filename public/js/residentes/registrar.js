@@ -7,7 +7,7 @@ export function registrarResidente(){
         e.preventDefault();
         // Expresiones regulares para validación
         const cedulaRegex = /^(V|E)-\d{7,9}$/i; // Ejemplo: V-12345678 o E-12345678
-        const telefonoRegex = /^0(2(12|14|16|24|26)|4(12|14|16|24|26))-\d{7}$/; // Ejemplo: 0412-1234567 o 0212-1234567
+        const telefonoRegex = /^0(2(12|14|16|24|26|58)|4(12|14|16|24|26))-\d{7}$/; // Ejemplo: 0412-1234567, 0212-1234567, 0258-1234567 (Cojedes)
 
         // Validar cédula
         const cedula = form.cedula_residente.value.trim().toUpperCase();
@@ -36,6 +36,7 @@ export function registrarResidente(){
 
         const response = await post('core/routes/api/createResidente.php', data);
 
+        console.log(response);
         if(response.success){
             alert(response.message);
             form.reset();

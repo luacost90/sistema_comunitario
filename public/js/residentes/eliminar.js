@@ -8,11 +8,10 @@ export function eliminar(){
         if (confirm("¿Estás seguro de que deseas eliminar este registro?")) {
              try {
                 const residentes = await post('core/routes/api/deleteResidente.php', id);
-               
-                console.log(residentes);
-                // if(residentes.success){
-                //     window.location.href = '/sistema_comunitario/residentes';
-                // }
+            
+                if(residentes.success){
+                    window.location.href = '/sistema_comunitario/residentes';
+                }
             } catch (error) {
                 console.error("Error al obtener los datos del residente:", error);
                 alert("Ocurrió un error al intentar eliminar el registro del residente.");
