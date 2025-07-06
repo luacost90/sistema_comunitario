@@ -86,6 +86,16 @@ class ResidenteRepository implements ResidenteRepositoryInterface{
         return $stmt->execute();
     }
 
+    public function countResidentesByEdadCategoria() {
+        $sql = "SELECT e.edad_categoria, COUNT(r.id_residente) AS cantidad
+                FROM edad_categorias e
+                LEFT JOIN residentes r ON r.fk_edad_categoria = e.id_edad_categoria
+                GROUP BY e.id_edad_categoria, e.edad_categoria";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function updateResidente(array $data) {
         $sql = "UPDATE residentes SET
             cedula_residente = :cedula_residente,

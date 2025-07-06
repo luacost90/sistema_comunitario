@@ -41,7 +41,6 @@ export async function filtrar(){
         });
 
         // Aquí puedes mostrar los resultados filtrados en la tabla o donde necesites
-        console.log(filtrados);
         renderList(filtrados);
     }
 

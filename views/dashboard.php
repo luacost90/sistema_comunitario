@@ -17,6 +17,9 @@
 ?>
 
 <div class="dashboard__container">
-    <h2>Accediste al Dashboard Felicidades !!!</h2>
+    <div class="dashboard-cards">
+       
+    </div>
 </div>
+
 

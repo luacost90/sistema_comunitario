@@ -28,5 +28,9 @@
             return $this->repository->getResidenteById($id);
         }
 
+         public function countResidentesByEdadCategoria(){
+            return $this->repository->countResidentesByEdadCategoria();
+         }
+
     }
 ?>

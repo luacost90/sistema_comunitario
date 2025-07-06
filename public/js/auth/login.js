@@ -15,7 +15,7 @@ export function singInLogin(){
         const response = await post('core/routes/api/login.php', data);
 
         if(response.success){
-            location.href = './residentes';
+            location.href = './dashboard';
         }else{
             showMessage(response.error, 'danger');
         }

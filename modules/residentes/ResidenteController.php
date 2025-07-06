@@ -127,6 +127,19 @@
 
             throw new InvalidArgumentException("Edad no válida: $edad");
         }
+
+        public function  countResidentesByEdadCategoria(){
+             $db = (new Database())->getConnection();
+            $repository = new ResidenteRepository($db);
+            $residenteService = new ResidenteService($repository);
+
+            $residentes = $residenteService->countResidentesByEdadCategoria();
+
+            if($residentes) 
+                echo json_encode(['success' => true, 'data' => $residentes]);
+            else
+                echo json_encode(['success' => false, 'error' => 'cargar la consulta']);
+        }
     }
 
 

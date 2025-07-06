@@ -1,6 +1,7 @@
 import { singInLogin } from "./auth/login.js";
 import { singOutLogin } from "./auth/logOut.js";
 import { actualizar } from "./residentes/actualizar.js";
+import { contar } from "./residentes/contadores.js";
 import { editar } from "./residentes/editar.js";
 import { eliminar } from "./residentes/eliminar.js";
 import { filtrar } from "./residentes/filtrar.js";
@@ -34,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     if(document.getElementById("filtroResidentesForm")){
         filtrar();
+    }
+
+    if(document.querySelector(".dashboard-cards")){
+        contar();
     }
 
     
